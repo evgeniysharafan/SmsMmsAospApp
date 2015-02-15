@@ -12,12 +12,12 @@ This code will be useful if you write a sms/mms app. You will be surprized how d
 -
 These links can be useful for you:
 
-* [Mms app AOSP](https://android.googlesource.com/platform/packages/apps/Mms) sources
+* [Mms app AOSP](https://android.googlesource.com/platform/packages/apps/Mms) sources.
 
 * [New Mms service for lollipop](https://android.googlesource.com/platform/packages/services/Mms) and a lot of mms configs for countries in the res folder.
 
-* [Chips](https://android.googlesource.com/platform/frameworks/opt/chips) library
-You can take a look on [this example](https://s-media-cache-ak0.pinimg.com/736x/19/e9/5a/19e95a6606b9fbc6251860831468f5cd.jpg) if you don't know what it is.
+* [Chips](https://android.googlesource.com/platform/frameworks/opt/chips) library.
+You can take a look at [this example](https://s-media-cache-ak0.pinimg.com/736x/19/e9/5a/19e95a6606b9fbc6251860831468f5cd.jpg) if you don't know what it is.
 
-* A [library](https://github.com/klinker41/android-smsmms) for sending Sms and Mms messges, based on this AOSP code. Also it includes lollipop Mms service and Mms configs [from platform/packages/services/Mms](https://android.googlesource.com/platform/packages/services/Mms)
+* A [library](https://github.com/klinker41/android-smsmms) for sending Sms and Mms messges, based on this AOSP code. Also it includes lollipop Mms service and Mms configs [from platform/packages/services/Mms](https://android.googlesource.com/platform/packages/services/Mms).
 But this library doesn't contain code for receiving messages.
