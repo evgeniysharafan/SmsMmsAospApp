@@ -23,6 +23,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.provider.Settings;
 import com.android.mms.compat.Telephony;
 
@@ -36,9 +37,13 @@ public class SimFullReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (Settings.Global.getInt(context.getContentResolver(),
-            Settings.Global.DEVICE_PROVISIONED, 0) == 1 &&
-            Telephony.Sms.Intents.SIM_FULL_ACTION.equals(intent.getAction())) {
+        boolean b = true;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            b = Settings.Global.getInt(context.getContentResolver(),
+                    Settings.Global.DEVICE_PROVISIONED, 0) == 1;
+        }
+
+        if (b && Telephony.Sms.Intents.SIM_FULL_ACTION.equals(intent.getAction())) {
 
             NotificationManager nm = (NotificationManager)
                 context.getSystemService(Context.NOTIFICATION_SERVICE);

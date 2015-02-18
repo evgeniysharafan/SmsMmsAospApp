@@ -29,7 +29,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.ContactsContract.Profile;
-import android.telephony.PhoneNumberUtils;
+import com.android.mms.compat.PhoneNumberUtils;
 import android.telephony.TelephonyManager;
 import android.text.Html;
 import android.text.SpannableStringBuilder;

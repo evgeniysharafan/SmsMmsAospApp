@@ -22,10 +22,11 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.provider.Settings;
-import com.android.mms.compat.Telephony;
 
 import com.android.mms.R;
+import com.android.mms.compat.Telephony;
 import com.android.mms.ui.ConversationList;
 
 
@@ -39,10 +40,13 @@ public class SmsRejectedReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (Settings.Global.getInt(context.getContentResolver(),
-                Settings.Global.DEVICE_PROVISIONED, 0) == 1 &&
-                Telephony.Sms.Intents.SMS_REJECTED_ACTION.equals(intent.getAction())) {
+        boolean b = true;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            b = Settings.Global.getInt(context.getContentResolver(),
+                    Settings.Global.DEVICE_PROVISIONED, 0) == 1;
+        }
 
+        if (b && Telephony.Sms.Intents.SMS_REJECTED_ACTION.equals(intent.getAction())) {
             int reason = intent.getIntExtra("result", -1);
             boolean outOfMemory = reason == Telephony.Sms.Intents.RESULT_SMS_OUT_OF_MEMORY;
             if (!outOfMemory) {
@@ -51,7 +55,7 @@ public class SmsRejectedReceiver extends BroadcastReceiver {
             }
 
             NotificationManager nm = (NotificationManager)
-            context.getSystemService(Context.NOTIFICATION_SERVICE);
+                    context.getSystemService(Context.NOTIFICATION_SERVICE);
 
             Intent viewConvIntent = new Intent(context, ConversationList.class);
             viewConvIntent.setAction(Intent.ACTION_VIEW);

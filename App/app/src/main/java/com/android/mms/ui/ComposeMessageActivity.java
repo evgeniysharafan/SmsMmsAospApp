@@ -54,7 +54,7 @@ import android.provider.ContactsContract.QuickContact;
 import android.provider.MediaStore.Images;
 import android.provider.MediaStore.Video;
 import android.provider.Settings;
-import android.telephony.PhoneNumberUtils;
+import com.android.mms.compat.PhoneNumberUtils;
 import android.telephony.SmsMessage;
 import android.text.Editable;
 import android.text.InputFilter;

@@ -10,12 +10,13 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.BaseColumns;
-import android.telephony.PhoneNumberUtils;
 import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.mms.LogTag;
 import com.android.mms.MmsApp;
+import com.android.mms.R;
+import com.android.mms.compat.PhoneNumberUtils;
 import com.android.mms.compat.Telephony.Mms;
 import com.android.mms.compat.Telephony.MmsSms;
 import com.android.mms.compat.Telephony.Sms;
@@ -30,7 +31,6 @@ import com.android.mms.util.AddressUtils;
 import com.android.mms.util.DraftCache;
 import com.google.android.mms.pdu.PduHeaders;
 import com.google.android.mms.util.SqliteWrapper;
-import com.android.mms.R;
 
 import java.util.ArrayList;
 import java.util.Collection;

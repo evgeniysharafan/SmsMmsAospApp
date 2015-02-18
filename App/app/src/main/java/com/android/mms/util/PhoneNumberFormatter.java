@@ -18,13 +18,14 @@ package com.android.mms.util;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.widget.TextView;
 
 import com.android.mms.MmsApp;
+import com.android.mms.compat.PhoneNumberFormattingTextWatcher;
 
 public final class PhoneNumberFormatter {
-    private PhoneNumberFormatter() {}
+    private PhoneNumberFormatter() {
+    }
 
     /**
      * Load {@link TextWatcherLoadAsyncTask} in a worker thread and set it to a {@link TextView}.
@@ -66,7 +67,7 @@ public final class PhoneNumberFormatter {
      * Delay-set {@link PhoneNumberFormattingTextWatcher} to a {@link TextView}.
      */
     public static final void setPhoneNumberFormattingTextWatcher(Context context,
-            TextView textView) {
+                                                                 TextView textView) {
         new TextWatcherLoadAsyncTask(MmsApp.getApplication().getCurrentCountryIso(), textView)
                 .executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, (Void[]) null);
     }

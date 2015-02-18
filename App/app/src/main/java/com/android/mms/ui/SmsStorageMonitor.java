@@ -16,11 +16,11 @@
 
 package com.android.mms.ui;
 
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.NotificationCompat;
 
 import com.android.mms.R;
 
@@ -47,8 +47,8 @@ public class SmsStorageMonitor extends BroadcastReceiver {
     }
 
     private void notifyReachStorageLimited() {
-        Notification.Builder mBuilder =
-                new Notification.Builder(mContext)
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(mContext)
                         .setSmallIcon(R.mipmap.ic_launcher_smsmms)
                         .setContentTitle(mContext.getString(R.string.storage_warning_title))
                         .setContentText(mContext.getString(R.string.storage_warning_content))

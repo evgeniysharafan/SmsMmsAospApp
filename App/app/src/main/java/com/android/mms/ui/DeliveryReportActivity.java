@@ -32,7 +32,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import com.android.mms.compat.Telephony.Mms;
 import com.android.mms.compat.Telephony.Sms;
-import android.telephony.PhoneNumberUtils;
+import com.android.mms.compat.PhoneNumberUtils;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;

@@ -43,7 +43,7 @@ import com.android.mms.compat.Telephony.Threads;
 import com.android.mms.compat.Telephony.Mms.Addr;
 import com.android.mms.compat.Telephony.Mms.Part;
 import com.android.mms.compat.Telephony.MmsSms.PendingMessages;
-import android.telephony.PhoneNumberUtils;
+import com.android.mms.compat.PhoneNumberUtils;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;

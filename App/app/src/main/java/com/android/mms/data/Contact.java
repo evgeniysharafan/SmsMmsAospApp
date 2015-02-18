@@ -17,7 +17,7 @@ import android.provider.ContactsContract.Contacts;
 import android.provider.ContactsContract.Data;
 import android.provider.ContactsContract.Presence;
 import android.provider.ContactsContract.Profile;
-import android.telephony.PhoneNumberUtils;
+import com.android.mms.compat.PhoneNumberUtils;
 import android.text.TextUtils;
 import android.util.Log;
 

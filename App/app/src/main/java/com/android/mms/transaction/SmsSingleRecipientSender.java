@@ -8,7 +8,7 @@ import android.content.Intent;
 import android.net.Uri;
 import com.android.mms.compat.Telephony.Mms;
 import com.android.mms.compat.Telephony.Sms;
-import android.telephony.PhoneNumberUtils;
+import com.android.mms.compat.PhoneNumberUtils;
 import android.telephony.SmsManager;
 import android.util.Log;
 

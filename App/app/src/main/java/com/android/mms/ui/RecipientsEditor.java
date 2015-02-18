@@ -22,7 +22,7 @@ import java.util.List;
 
 import android.content.Context;
 import com.android.mms.compat.Telephony.Mms;
-import android.telephony.PhoneNumberUtils;
+import com.android.mms.compat.PhoneNumberUtils;
 import android.text.Annotation;
 import android.text.Editable;
 import android.text.Layout;

@@ -43,7 +43,7 @@ import android.os.Handler;
 import android.provider.MediaStore;
 import com.android.mms.compat.Telephony.Mms;
 import com.android.mms.compat.Telephony.Sms;
-import android.telephony.PhoneNumberUtils;
+import com.android.mms.compat.PhoneNumberUtils;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.text.format.Time;

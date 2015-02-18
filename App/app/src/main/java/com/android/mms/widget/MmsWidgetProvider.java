@@ -17,13 +17,13 @@
 package com.android.mms.widget;
 
 import android.app.PendingIntent;
-import android.app.TaskStackBuilder;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.app.TaskStackBuilder;
 import android.util.Log;
 import android.widget.RemoteViews;
 
