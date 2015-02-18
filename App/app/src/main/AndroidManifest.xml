@@ -21,6 +21,9 @@
     <uses-permission android:name="android.permission.INSTALL_DRM" />
     <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
 
+    <!-- SoundRecorder -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
     <!-- System apps can access the  receiver through intent-->
     <permission
         android:name="android.permission.MMS_SEND_OUTBOX_MSG"
@@ -362,6 +365,19 @@
             android:name="com.android.mms.widget.MmsWidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS"
             android:exported="false" />
+
+        <!-- SoundRecorder -->
+        <activity
+            android:name="com.android.soundrecorder.SoundRecorder"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="unspecified"
+            android:clearTaskOnLaunch="true"
+            android:theme="@style/Theme.SoundRecorder">
+
+            <intent-filter>
+                <action android:name="android.provider.MediaStore.RECORD_SOUND" />
+            </intent-filter>
+        </activity>
 
     </application>
 
