@@ -2,10 +2,12 @@
 
 It is the lollipop version of [AOSP Messaging app](https://android.googlesource.com/platform/packages/apps/Mms) which compiles without depending on internal Android classes and other libs which are listed in the [Android.mk](https://android.googlesource.com/platform/packages/apps/Mms/+/master/Android.mk) file.
 
+The code is taken from this [commit](https://android.googlesource.com/platform/packages/apps/Mms/+/466cb5674614407596c332308b4119decaa22aad).
+
 Should work on API 15+.
 
 -
-This code will be useful if you write a sms/mms app. You will be surprized how difficult to create a mms app on Android. All such apps get inspire from AOSP Mms app and use internal com.google.android.mms.pdu package. Here you will find a working example of such app.
+This code will be useful if you develop a sms/mms app. You will be surprized how difficult to create a mms app on Android. All such apps get inspire from AOSP Mms app and use internal com.google.android.mms.pdu package. Here you will find a working example of such app.
 
 -
 These links can be useful for you:
