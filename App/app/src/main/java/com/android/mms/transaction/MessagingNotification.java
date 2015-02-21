@@ -915,8 +915,8 @@ public class MessagingNotification {
         noti.setContentTitle(title)
                 .setContentIntent(
                         taskStackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT))
-                .setCategory(Notification.CATEGORY_MESSAGE)
-                .setPriority(Notification.PRIORITY_DEFAULT);     // TODO: set based on contact coming
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);     // TODO: set based on contact coming
         // from a favorite.
 
         // Tag notification with all senders.
@@ -949,7 +949,7 @@ public class MessagingNotification {
                 vibrate = "always".equals(vibrateWhen);
             }
             if (vibrate) {
-                defaults |= Notification.DEFAULT_VIBRATE;
+                defaults |= NotificationCompat.DEFAULT_VIBRATE;
             }
 
             String ringtoneStr = sp.getString(MessagingPreferenceActivity.NOTIFICATION_RINGTONE,
@@ -958,7 +958,7 @@ public class MessagingNotification {
             Log.d(TAG, "updateNotification: new message, adding sound to the notification");
         }
 
-        defaults |= Notification.DEFAULT_LIGHTS;
+        defaults |= NotificationCompat.DEFAULT_LIGHTS;
 
         noti.setDefaults(defaults);
 
@@ -1188,7 +1188,7 @@ public class MessagingNotification {
             boolean vibrate = sp.getBoolean(MessagingPreferenceActivity.NOTIFICATION_VIBRATE,
                     false /* don't vibrate by default */);
             if (vibrate) {
-                notification.defaults |= Notification.DEFAULT_VIBRATE;
+                notification.defaults |= NotificationCompat.DEFAULT_VIBRATE;
             }
 
             String ringtoneStr = sp.getString(MessagingPreferenceActivity.NOTIFICATION_RINGTONE,

@@ -1,5 +1,6 @@
 package com.android.mms.data;
 
+import android.annotation.SuppressLint;
 import android.content.ContentUris;
 import android.content.Context;
 import android.database.ContentObserver;
@@ -9,6 +10,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Parcelable;
 import android.provider.ContactsContract.CommonDataKinds.Email;
@@ -17,16 +19,16 @@ import android.provider.ContactsContract.Contacts;
 import android.provider.ContactsContract.Data;
 import android.provider.ContactsContract.Presence;
 import android.provider.ContactsContract.Profile;
-import com.android.mms.compat.PhoneNumberUtils;
 import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.mms.LogTag;
 import com.android.mms.MmsApp;
+import com.android.mms.R;
+import com.android.mms.compat.PhoneNumberUtils;
 import com.android.mms.compat.Telephony.Mms;
 import com.android.mms.ui.MessageUtils;
 import com.google.android.mms.util.SqliteWrapper;
-import com.android.mms.R;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -425,6 +427,7 @@ public class Contact {
         // Utilizing private API
         private static final Uri PHONES_WITH_PRESENCE_URI = Data.CONTENT_URI;
 
+        @SuppressLint("InlinedApi")
         private static final String[] CALLER_ID_PROJECTION = new String[]{
                 Phone._ID,                      // 0
                 Phone.NUMBER,                   // 1
@@ -433,7 +436,7 @@ public class Contact {
                 Phone.CONTACT_ID,               // 4
                 Phone.CONTACT_PRESENCE,         // 5
                 Phone.CONTACT_STATUS,           // 6
-                Phone.NORMALIZED_NUMBER,        // 7
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN ? Phone.NORMALIZED_NUMBER : Phone.DATA4, // 7
                 Contacts.SEND_TO_VOICEMAIL      // 8
         };
 
